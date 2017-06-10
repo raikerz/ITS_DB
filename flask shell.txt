@@ -1,0 +1,29 @@
+CREATE DATABASE its_db;
+GRANT ALL PRIVILEGES ON its_db . * TO 'its_admin'@'localhost';
+
+set FLASK_APP=run.py
+set FLASK_CONFIG=development
+set FLASK_DEBUG=1
+flask run
+
+FLASK SHELL
+from app.models import Employee;
+from app import db;
+admin = Employee(username="admin",password="admin",is_admin=True);
+db.session.add(admin);
+db.session.commit();
+heng = Employee(username="heng",password="heng",is_heng=True);
+db.session.add(heng);
+db.session.commit();
+sat = Employee(username="sat",password="sat",is_sat=True);
+db.session.add(sat);
+db.session.commit();
+acc = Employee(username="acc",password="acc",is_acc=True);
+db.session.add(acc);
+db.session.commit();
+eng = Employee(username="eng",password="eng",is_eng=True);
+db.session.add(eng);
+db.session.commit();
+mos = Employee(username="mos",password="mos",is_mos=True);
+db.session.add(mos);
+db.session.commit();
